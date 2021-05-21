@@ -1,5 +1,106 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoidHJ1b3RlcmUiLCJhIjoiY2tvbWhobDdwMDFnbTJucGR6bXc1NmliYiJ9.kGq6AG81Bp3I3Xw03qCKZw';
+const apiKey = 'pk.eyJ1IjoidHJ1b3RlcmUiLCJhIjoiY2tvbWhobDdwMDFnbTJucGR6bXc1NmliYiJ9.kGq6AG81Bp3I3Xw03qCKZw';
 
+const mymap = L.map('map').setView([32.76,-117.212], 14);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: apiKey
+}).addTo(mymap);
+
+// Marker
+const marker = L.marker([32.76,-117.212]).addTo(mymap);
+
+// Popup
+let template = `
+    <h1>San Diego River</h1>
+    <img width="200" height="150" src="sdriver.jpeg"/>
+`
+marker.bindPopup(template);
+
+/* Circle
+const circle = L.circle([32.76,-117.212], {
+    radius:500,
+    color: 'blue'
+}).addTo(mymap)
+*/
+
+// River Polygon
+const polygon = L.polygon([
+
+    // bottom
+
+    // Left Most Point
+    [32.756333, -117.253590],
+
+    // top of polygon
+    [32.761189, -117.212484],
+    [32.762658, -117.207714],
+    [32.762355, -117.203243],
+    [32.763366, -117.192636],
+    [32.762732, -117.190967],
+    [32.762835, -117.183377],
+    [32.762763, -117.181686],
+    [32.765334, -117.175528],
+    [32.765334, -117.173127],
+    [32.764999, -117.161028],
+    [32.772567, -117.149571],
+    [32.774341, -117.139968],
+    [32.775971, -117.131506],
+    [32.781587, -117.116885],
+    [32.782202, -117.112643],
+    [32.781387, -117.110727],
+    [32.781263, -117.106905],
+    [32.782610, -117.104901],
+    [32.784369, -117.104073],
+    [32.787556, -117.103525],
+    [32.790067, -117.103626],
+    [32.792333, -117.102261],
+    [32.795433, -117.097984],
+    [32.796363, -117.097839],
+
+
+    // Right Most Point
+    [32.802096, -117.095154],
+
+    // bottom of polygon
+    [32.759520, -117.212484],//
+    [32.761658, -117.207714],
+    [32.761355, -117.203243],
+    [32.762366, -117.192636],
+    [32.761732, -117.190967],
+    [32.761835, -117.183377],
+    [32.761763, -117.181686],
+    [32.764334, -117.175528],
+    [32.764334, -117.173127],
+    [32.763999, -117.161028],
+    [32.771567, -117.149571],
+    [32.773341, -117.139968],
+    [32.774971, -117.131506],
+    [32.780587, -117.116885],
+    [32.781202, -117.112643],
+    [32.780387, -117.110727],
+    [32.780263, -117.106905],
+    [32.781610, -117.104901],
+    [32.783369, -117.104073],
+    [32.786556, -117.103525],
+    [32.789067, -117.103626],
+    [32.791333, -117.102261],
+    [32.794433, -117.097984],
+    [32.795363, -117.097839],
+
+], {
+    color: 'blue',
+    fillColor: 'blue',
+    fillOpacity:0.2
+}).addTo(mymap)
+
+polygon.bindPopup('cry me a river')
+
+
+/*
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
     enableHighAccuracy: true
 });
@@ -24,3 +125,4 @@ function setupMap(center) {
     const nav = new mapboxgl.NavigationControl();
     map.addControl(nav);
 }
+*/
