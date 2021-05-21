@@ -6,11 +6,11 @@ navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
 
 function successLocation(position) {
     console.log(position);
-    setupMap([position.coords.longitude, position.coords.latitude]);
+    setupMap([-117.212,32.76]);
 }
 
 function errorLocation() {
-    setupMap([-117.212,32.76])
+    setupMap([-117.212,32.76]);
 }
 
 function setupMap(center) {
