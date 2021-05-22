@@ -2,8 +2,6 @@ const apiKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvc
 
 const mymap = L.map('map').setView([32.76,-117.212], 14);
 
-
-
 L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckozcwy83352o17ljki9r1kdw/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
     maxZoom: 18,
     id: 'mapbox/streets-v11',
@@ -21,8 +19,6 @@ let template = `
     <img width="200" height="150" src="sdriver.jpeg"/>
 `
 marker.bindPopup(template);
-
-
 
 // River Polygon
 const polygon = L.polygon([
