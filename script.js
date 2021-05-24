@@ -10,10 +10,29 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: apiKey
 }).addTo(mymap);
 
-/*Marker
+/* Default Marker
 const marker = L.marker([32.76,-117.212]).addTo(mymap);
+*/
 
-// Marker Popup
+//Impact Map Markers
+
+
+/*Education Markers
+var education = L.marker([
+
+    [32.92599187, -117.1496417]
+    [32.77573049, -117.1711135]
+    [32.90662956, -117.1569916]
+    [32.69188411, -117.109097]
+    [32.80795605, -117.1996296]
+], {
+    color: 'blue',
+    //fillColor: 'blue',
+    //fillOpacity:0.2
+}).addTo(mymap)
+*/
+
+/* Marker Popup
 let markerPopup = `
     <h1>San Diego River</h1>
     <img width="500" height="400" src="current_data.png"/>
