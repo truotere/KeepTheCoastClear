@@ -1,9 +1,9 @@
 // API Key Setup
-const apiKey = 'pk.eyJ1IjoidHJ1b3RlcmUiLCJhIjoiY2tvbWhobDdwMDFnbTJucGR6bXc1NmliYiJ9.kGq6AG81Bp3I3Xw03qCKZw';
+const apiKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7AA';
 
 const mymap = L.map('map').setView([32.76,-117.212], 14);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp2zja7g49rg17pk0cd9vfjd/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
