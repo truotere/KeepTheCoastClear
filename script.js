@@ -10,7 +10,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp2zja7g49rg17p
     accessToken: apiKey,
 }).addTo(mymap);
 
-// // Marker
 // const marker = L.marker([32.76,-117.212]).addTo(mymap);
 
 // Polygon Popup
