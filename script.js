@@ -1,3 +1,4 @@
+// API Key Setup
 const apiKey = 'pk.eyJ1IjoidHJ1b3RlcmUiLCJhIjoiY2tvbWhobDdwMDFnbTJucGR6bXc1NmliYiJ9.kGq6AG81Bp3I3Xw03qCKZw';
 
 const mymap = L.map('map').setView([32.76,-117.212], 14);
@@ -10,27 +11,76 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: apiKey
 }).addTo(mymap);
 
-/* Default Marker
-const marker = L.marker([32.76,-117.212]).addTo(mymap);
-*/
+/* Impact Map Markers */
 
-//Impact Map Markers
+// Litigation Win
+const lit1 = L.marker([32.631616, -117.100192]).addTo(mymap);
+lit1.bindPopup('Rohr/UTC Aerospace Bayfront');
 
+const lit2 = L.marker([32.976837, -117.264086]).addTo(mymap);
+lit2.bindPopup('Del Mar Fairgrounds');
 
-/*Education Markers
-var education = L.marker([
+const lit3 = L.marker([32.689676, -117.145969]).addTo(mymap);
+lit3.bindPopup('San Diego Bay Shipyards Sediment Removal');
 
-    [32.92599187, -117.1496417]
-    [32.77573049, -117.1711135]
-    [32.90662956, -117.1569916]
-    [32.69188411, -117.109097]
-    [32.80795605, -117.1996296]
-], {
-    color: 'blue',
-    //fillColor: 'blue',
-    //fillOpacity:0.2
-}).addTo(mymap)
-*/
+const lit4 = L.marker([32.679069, -117.2467]).addTo(mymap);
+lit4.bindPopup('Pure Water San Diego - Point Loma Wastewater Treatment Plant Cleanup');
+
+const lit5 = L.marker([32.854507, -117.165629]).addTo(mymap);
+lit5.bindPopup('Miramar Landfill');
+
+// Beach Cleanup
+const beach1 = L.marker([32.79629, -117.25667]).addTo(mymap);
+beach1.bindPopup('Crystal Pier Beach Cleanup');
+
+const beach2 = L.marker([32.961473, -117.268098]).addTo(mymap);
+beach2.bindPopup('15th Street/Powerhouse Park Beach Cleanup');
+
+const beach3 = L.marker([32.7825908, -117.2524943]).addTo(mymap);
+beach3.bindPopup('Bank of America Beach Cleanup');
+
+const beach4 = L.marker([32.8573693, -117.2535406]).addTo(mymap);
+beach4.bindPopup('GKN Aerospace Beach Cleanup');
+
+// Restoration Effort
+const restore1 = L.marker([32.5880126953125, -117.072227478027]).addTo(mymap);
+restore1.bindPopup('Otay Valley Regional Park');
+
+// Advocacy Win
+const advocacy1 = L.marker([32.8801756322311, -117.19894066569]).addTo(mymap);
+advocacy1.bindPopup('Pure Water San Diego - North City Water Reclamation Plant');
+
+// Water Quality Monitoring
+const monitor1 = L.marker([32.687481, -117.1276321]).addTo(mymap);
+monitor1.bindPopup('Sampling Site');
+
+const monitor2 = L.marker([32.69569, -117.1223602]).addTo(mymap);
+monitor2.bindPopup('Sampling Site');
+
+const monitor3 = L.marker([32.71196, -117.1202316]).addTo(mymap);
+monitor3.bindPopup('Sampling Site');
+
+const monitor4 = L.marker([32.72715, -117.0699463]).addTo(mymap);
+monitor4.bindPopup('Sampling Site');
+
+const monitor5 = L.marker([32.691921, -117.1126404]).addTo(mymap);
+monitor5.bindPopup('Sampling Site');;
+
+// Education
+const education1 = L.marker([32.92599187, -117.1496417]).addTo(mymap);
+education1.bindPopup('Walking Field Trip - Sandberg Elementary');
+
+const education2 = L.marker([32.77573049, -117.1711135]).addTo(mymap);
+education2.bindPopup('Guided Lesson - Carson Elementary');
+
+const education3 = L.marker([32.90662956, -117.1569916]).addTo(mymap);
+education3.bindPopup('Guided Lesson - Salk Elementary');
+
+const education4 = L.marker([32.69188411, -117.109097]).addTo(mymap);
+education4.bindPopup('Science Talk - Chavez Elementary');
+
+const education5 = L.marker([32.80795605, -117.1996296]).addTo(mymap);
+education5.bindPopup('Science Talk - Marston Middle School');
 
 /* Marker Popup
 let markerPopup = `
@@ -38,7 +88,6 @@ let markerPopup = `
     <img width="500" height="400" src="current_data.png"/>
 `
 marker.bindPopup(markerPopup);
-*/
 
 // Polygon Popup
 let template = `
@@ -47,6 +96,8 @@ let template = `
         <img width="600" height="450" src="current_data.png"/>
     </div>
 `
+*/
+
 // River Polygon
 const polygon = L.polygon([
 
@@ -117,6 +168,9 @@ const polygon = L.polygon([
 //polygon.bindPopup('San Diego River')
 polygon.bindPopup(template);
 
+
+
+// Old Setup
 /*
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
     enableHighAccuracy: true
