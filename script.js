@@ -1,5 +1,8 @@
 // API Key Setup
 const apiKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7AA';
+const apiGreyKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A';
+const apiWatershedsKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A';
+const apiJurisdictionsKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A';
 
 // Base Layer
 const mymap = L.map('map').setView([32.76,-117.212], 11);
@@ -11,7 +14,28 @@ const base = L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp
     accessToken: apiKey
 }).addTo(mymap);
 
+// Watersheds
+const watersheds =  L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp6h8poy27nl17ny8d97w33p/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: apiWatershedsKey
+});
 
+// Layer Group: Waterbodies
+const watershedslayer = L.layerGroup([watersheds]);
+
+// Jurisdictions
+const jurisdictions =  L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp6i3e64229i17o770l5u8qb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: apiJurisdictionsKey
+});
+
+const jurisdictionLayer = L.layerGroup([jurisdictions]);
 
 
 /* IMPACT MAP LAYER */
@@ -267,17 +291,16 @@ const sdr = L.polygon([
 const waterbodies = L.layerGroup([sdr]);
 
 
-
-
-
 // Layers Control
 const baseMaps = {
-    "Base Layer": base
+    "Base Layer": base,
+    "Watersheds": watershedslayer,
+    "Municipality Jurisdiction": jurisdictions
 };
 
 const overlayMaps = {
     "Impact Map": impactMap,
-    "Waterbodies": waterbodies
+    "Waterbodies": waterbodies,
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(mymap);
