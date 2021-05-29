@@ -1,12 +1,11 @@
 // API Key Setup
-const apiKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7AA';
-const apiGreyKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A';
+const apiKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A';
 const apiWatershedsKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A';
 const apiJurisdictionsKey = 'pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A';
 
 /* BASE LAYER */
 const mymap = L.map('map').setView([32.76,-117.212], 12);
-const base = L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp2zja7g49rg17pk0cd9vfjd/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
+const base = L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckpa1r3af12yl17oxlu5bidd9/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
@@ -16,7 +15,7 @@ const base = L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp
 
 
 /* WATERSHEDS LAYER */
-const watersheds =  L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp6h8poy27nl17ny8d97w33p/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
+const watersheds =  L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckpa22cm44uac17mwq2hn8eze/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
@@ -28,7 +27,7 @@ const watershedslayer = L.layerGroup([watersheds]);
 
 
 /* MUNICIPALITY JURISDICTIONS */
-const jurisdictions =  L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp6i3e64229i17o770l5u8qb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
+const jurisdictions =  L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckpa26mtc2iww17o6o3ef90rn/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
