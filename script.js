@@ -14,6 +14,17 @@ const base = L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp
 }).addTo(mymap);
 
 
+/* LEGEND */
+var legend = L.control({position: 'bottomleft'});
+legend.onAdd = function (mymap) {
+
+    var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML = '<img src="legend.png" width="175" height="300">';
+    return div;
+};
+legend.addTo(mymap);
+
+
 /* WATERSHEDS LAYER */
 const watersheds =  L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckpa22cm44uac17mwq2hn8eze/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
     maxZoom: 18,
@@ -225,17 +236,14 @@ const sdr = L.polygon([
 const waterbodies = L.layerGroup([sdr]);
 
 
-
 /* Layers Control */
 const baseMaps = {
     "Base Layer": base,
     "Watersheds": watershedslayer,
     "Municipality Jurisdiction": jurisdictions
 };
-
 const overlayMaps = {
     "Impact Map": impactMap,
     "Waterbodies": waterbodies,
 };
-
 L.control.layers(baseMaps, overlayMaps).addTo(mymap);
