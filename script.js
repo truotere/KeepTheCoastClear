@@ -13,6 +13,15 @@ const base = L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckp
     accessToken: apiKey
 }).addTo(mymap);
 
+/* LEGEND */
+var legend = L.control({position: 'bottomleft'});
+legend.onAdd = function (mymap) {
+
+    var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML = '<img src="legend.png" width="175" height="300">';
+    return div;
+};
+legend.addTo(mymap);
 
 /* WATERSHEDS LAYER */
 const watersheds = L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosthwaite/ckpa22cm44uac17mwq2hn8eze/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaXNhYWNnY3Jvc3Rod2FpdGUiLCJhIjoiY2tveHJoMHpkMGJqNTJvcjlkMjkwdWVyMSJ9.sKzywThwKm0SgIqc7IxV7A', {
@@ -36,7 +45,7 @@ const jurisdictions = L.tileLayer('https://api.mapbox.com/styles/v1/isaacgcrosth
 });
 
 const jurisdictionLayer = L.layerGroup([jurisdictions]);
-
+3
 
 /* IMPACT MAP LAYER */
 
